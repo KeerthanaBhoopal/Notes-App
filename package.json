@@ -1,0 +1,29 @@
+{
+  "name": "notes-app-redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "nodemon index.js",
+    "dev": "concurrently \"nodemon index.js\" \"cd client && npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.4.1",
+    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.8.11",
+    "reactstrap": "^8.4.1",
+    "redux": "^4.0.5",
+    "validator": "^12.2.0"
+  }
+}
