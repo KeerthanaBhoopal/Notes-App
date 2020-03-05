@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../../config/axios'
 import CategoryForm from './Form'
 import {Link} from 'react-router-dom'
 import { Table, Container, Button } from 'reactstrap'
@@ -27,7 +27,8 @@ class CategoryList extends React.Component{
     // }
 
     componentDidMount(){
-        axios.get('http://localhost:3035/category', {
+        // axios.get('http://localhost:3035/category', {
+            axios.get('/category', {
             headers:{
                 'x-auth':localStorage.getItem('authToken')
             }
@@ -42,7 +43,8 @@ class CategoryList extends React.Component{
         })
     }
     handleSubmit=(formData)=>{
-        axios.post(`http://localhost:3035/category`,formData, {
+        // axios.post(`http://localhost:3035/category`,formData, {
+            axios.post(`/category`,formData, {
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -55,7 +57,8 @@ class CategoryList extends React.Component{
         })
     }
     handleRemove=(id)=>{
-        axios.delete(`http://localhost:3035/category/${id}`, {
+        // axios.delete(`http://localhost:3035/category/${id}`, {
+            axios.delete(`/category/${id}`, {
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

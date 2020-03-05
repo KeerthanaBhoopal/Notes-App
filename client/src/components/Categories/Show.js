@@ -1,6 +1,6 @@
 import React from 'react'
 // import axios from 'axios'
-import axios from 'axios'
+import axios from '../../config/axios'
 import {Link} from 'react-router-dom'
 
 class CategoryShow extends React.Component{
@@ -12,7 +12,8 @@ constructor(){
 }
 componentDidMount(){
     const id=this.props.match.params.id
-    axios.get(`http://localhost:3035/category/${id}`, {
+    // axios.get(`http://localhost:3035/category/${id}`, {
+        axios.get(`/category/${id}`, {
         headers: {
             'x-auth': localStorage.getItem('authToken')
         }

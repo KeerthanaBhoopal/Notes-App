@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../../config/axios'
 import {FormGroup} from 'reactstrap'
 
 class Register extends React.Component {
@@ -23,7 +23,8 @@ class Register extends React.Component {
             email: this.state.email,
             password: this.state.password
         }
-        axios.post('http://localhost:3035/users/register', formData)
+        // axios.post('http://localhost:3035/users/register', formData)
+        axios.post('/users/register', formData)
             .then(response => {
                 if(response.data.errors) {
                     alert(response.data.message)

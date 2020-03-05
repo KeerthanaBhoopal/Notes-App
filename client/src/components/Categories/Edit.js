@@ -1,6 +1,6 @@
 import  React from 'react'
 import CategoryForm from './Form'
-import axios from 'axios'
+import axios from '../../config/axios'
 class CategoryEdit extends React.Component{
     constructor(){
         super()
@@ -9,7 +9,8 @@ class CategoryEdit extends React.Component{
         }
     }
     handleSubmit=(formData)=>{
-        axios.put(`http://localhost:3035/category/${this.props.match.params.id}`,formData, {
+        // axios.put(`http://localhost:3035/category/${this.props.match.params.id}`,formData, {
+            axios.put(`/category/${this.props.match.params.id}`,formData, {
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -17,12 +18,14 @@ class CategoryEdit extends React.Component{
         .then(response=>{
             const category=response.data
            // console.log(response.data)
-            this.props.history.push(`http://localhost:3035/category/${category._id}`)
+            // this.props.history.push(`http://localhost:3035/category/${category._id}`)
+            this.props.history.push(`/category/${category._id}`)
         })
     }
     componentDidMount(){
         const id=this.props.match.params.id
-        axios.get(`http://localhost:3035/category/${id}`, {
+        // axios.get(`http://localhost:3035/category/${id}`, {
+            axios.get(`/category/${id}`, {
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

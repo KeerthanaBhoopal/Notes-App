@@ -1,6 +1,6 @@
 import  React from 'react'
 import NotesForm from './Form'
-import axios from 'axios'
+import axios from '../../config/axios'
 class NotesEdit extends React.Component{
     constructor(){
         super()
@@ -9,7 +9,8 @@ class NotesEdit extends React.Component{
         }
     }
     handleSubmit=(formData)=>{
-        axios.put(`http://localhost:3035/notes/${this.props.match.params.id}`,formData, {
+        // axios.put(`http://localhost:3035/notes/${this.props.match.params.id}`,formData, {
+            axios.put(`/notes/${this.props.match.params.id}`,formData, {
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -17,12 +18,14 @@ class NotesEdit extends React.Component{
         .then(response=>{
             const note=response.data
            // console.log(response.data)
-            this.props.history.push(`http://localhost:3035/notes/${note._id}`)
+            // this.props.history.push(`http://localhost:3035/notes/${note._id}`)
+            this.props.history.push(`/notes/${note._id}`)
         })
     }
     componentDidMount(){
         const id=this.props.match.params.id
-        axios.get(`http://localhost:3035/notes/${id}`, {
+        // axios.get(`http://localhost:3035/notes/${id}`, {
+            axios.get(`/notes/${id}`, {
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

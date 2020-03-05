@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../../config/axios'
 import { FormGroup } from 'reactstrap'
 import notespic from '../../images/notes2.jpeg'
 import '../../App.css'
@@ -26,7 +26,8 @@ class Login extends React.Component {
             password: this.state.password,
             submitted:false
         }
-        axios.post('http://localhost:3035/users/login', formData)
+        // axios.post('http://localhost:3035/users/login', formData)
+        axios.post('/users/login', formData)
             .then(response => {
                 if(response.data.error) {
                     alert(response.data.error)

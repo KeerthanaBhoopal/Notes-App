@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../../config/axios'
 import './Note.css'
 import { FormGroup } from 'reactstrap'
 //import {Button,Form,FormGroup,Label,Input} from 'reactstrap'
@@ -17,7 +17,8 @@ class NotesForm extends React.Component{
         }
         componentDidMount(){
             console.log('component Did mount')
-            axios.get('http://localhost:3035/category', {
+            // axios.get('http://localhost:3035/category', {
+                axios.get('/category', {
                 headers: {
                     'x-auth': localStorage.getItem('authToken')
                 }

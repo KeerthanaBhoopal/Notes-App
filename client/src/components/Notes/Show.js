@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../../config/axios'
 import {Link} from 'react-router-dom'
 import { Table} from 'reactstrap'
 //import 'bootstrap/dist/css/bootstrap.min.css'
@@ -13,7 +13,8 @@ constructor(){
 }
 componentDidMount(){
     const id=this.props.match.params.id
-    axios.get(`http://localhost:3035/notes/${id}`, {
+    // axios.get(`http://localhost:3035/notes/${id}`, {
+        axios.get(`/notes/${id}`, {
         headers: {
             'x-auth': localStorage.getItem('authToken')
         }

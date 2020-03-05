@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../../config/axios'
 import {Link} from 'react-router-dom'
 import { Table, Button } from 'reactstrap'
 //import 'bootstrap/dist/css/bootstrap.min.css'
@@ -12,7 +12,8 @@ class NotesList extends React.Component{
     }
     componentDidMount(){
 
-        axios.get('http://localhost:3035/notes', {
+        // axios.get('http://localhost:3035/notes', {
+            axios.get('/notes', {
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }
@@ -27,7 +28,8 @@ class NotesList extends React.Component{
         })
     }
     handleRemove=(id)=>{
-        axios.delete(`http://localhost:3035/notes/${id}`, {
+        // axios.delete(`http://localhost:3035/notes/${id}`, {
+            axios.delete(`/notes/${id}`, {
             headers: {
                 'x-auth': localStorage.getItem('authToken')
             }

@@ -1,7 +1,7 @@
 const mongoose=require('mongoose')
 
 mongoose.Promise=global.Promise
-const CONNECTION_URI= process.env.MONGODB_URI || "mongodb://localhost:27017/note-app"
+const CONNECTION_URI= process.env.MONGODB_URI ||  "mongodb+srv://cluster0-yepjy.mongodb.net/test" 
 const setUpDB=()=>{
 mongoose.connect(CONNECTION_URI,{ useNewUrlParser: true,useUnifiedTopology: true})
 .then(()=>{
@@ -13,3 +13,6 @@ mongoose.connect(CONNECTION_URI,{ useNewUrlParser: true,useUnifiedTopology: true
 
 }
 module.exports=setUpDB
+
+//mongo "mongodb+srv://cluster0-yepjy.mongodb.net/test"  --username keerDB
+//"mongodb://localhost:27017/note-app"
