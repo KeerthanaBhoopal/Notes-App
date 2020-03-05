@@ -1,6 +1,7 @@
 import React from 'react'
 //import {UncontrolledCarousel } from 'reactstrap'
 import notes from '../images/notes2.jpeg'
+import '../../src/App.css'
 
 
 // const items = [
@@ -38,6 +39,7 @@ function Home(){
             
             {/* <UncontrolledCarousel items={items} />; */}
         </div>
+        
     )
 }
 

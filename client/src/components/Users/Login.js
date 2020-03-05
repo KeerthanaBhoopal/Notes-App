@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { FormGroup } from 'reactstrap'
-
+import notespic from '../../images/notes2.jpeg'
+import '../../App.css'
 
 class Login extends React.Component {
     constructor() {
